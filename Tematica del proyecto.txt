@@ -1,0 +1,6 @@
+
+En esta página utilizaremos una serie de enlaces y un sistema de búsqueda para publicar tutoriales
+donde, para reforzar el aprendizaje, se deberán resolver una serie de preguntas. Estas publicaciones tendrán
+temática de programación y las preguntas pueden ser de distintos estilos (introducir el código restante,
+elegir la opción mas óptima).
+
