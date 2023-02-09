@@ -1,0 +1,35 @@
+html{
+    background-color: rgb(48, 46, 46);
+    color: rgb(141, 140, 140);
+}
+h1{
+    color:white;
+    text-align: center;
+}
+p#subtitulo{
+    color:silver;
+    text-align: center;
+    font-style: italic;
+}
+div#textoTitulo{
+    background-color: rgb(15, 15, 15);
+}
+
+div#textoPaginaPrincipal{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div#botonesLinks{
+    text-align: center;
+    line-height: 50px;
+    
+}
+a{
+    
+    text-decoration: none;
+  background-color: white;
+  color: black;
+  border-style:double;
+  padding: 3px; 
+}
+  
