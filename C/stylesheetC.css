@@ -1,0 +1,62 @@
+#sidenav h2 {
+	font-size: 21px;
+	padding-left: 16px;
+	margin: -4px 0 4px 0;
+	width: 204px;
+}
+
+#sidenav a {
+	font-family: "Segoe UI", Arial, sans-serif;
+	text-decoration: none;
+	display: block;
+	padding: 2px 1px 1px 16px
+}
+
+#sidenav a:hover,
+#sidenav a:focus {
+	color: #000000;
+	background-color: #cccccc;
+}
+
+#sidenav a.active {
+	background-color: #04AA6D !important;
+	color: #ffffff !important;
+}
+
+#sidenav a.activesub:link,
+#sidenav a.activesub:visited {
+	background-color: #ddd;
+	color: #000;
+}
+
+#sidenav a.activesub:hover,
+#sidenav a.activesub:active {
+	background-color: #ccc;
+	color: #000;
+}
+
+#leftmenuinner {
+	position: fixed;
+	top: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 100%;
+	width: 250px;
+	background-color: transparent;
+}
+
+#leftmenuinnerinner {
+	height: 100%;
+	width: 100%;
+	background-color: #E7E9EB;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.ref_overview, .tut_overview{
+	display :none;
+	margin-left:10px;
+	background-color:#ddd;
+	line-height:1.8em;
+   }
