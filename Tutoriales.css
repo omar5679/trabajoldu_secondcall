@@ -1,0 +1,16 @@
+.cajaTutorial{
+    border:2px solid rgb(206, 206, 206);
+    background-color: #383b40;
+    border-radius: 10px;
+    width:300px;
+    overflow:auto;    
+    padding:10px;
+    margin: auto;
+    width: 50%;
+}
+
+.cajaTutorial .codigo{
+    
+    font-family: Courier, sans-serif;
+    color: #fff;
+}
