@@ -14,7 +14,7 @@ let diccionario = {
   };
 
 const tutosC = 12;
-let visitedCPages;
+let visitedCPages = [];
 
 //Al cargar la pagina, si estamos en Cuenta, recoge el componente perfil y lo actualiza si es necesario
 document.addEventListener("DOMContentLoaded", function() {
