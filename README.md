@@ -2,4 +2,4 @@ Trabajo para la asignatura de Interfaces de Usuario en la Universidad de Málaga
 
 Consiste en una web donde se podrán realizar tutoriales de distintos lenguajes de programación
 
-Realizado por 
+Realizado por Ángel Joaquín Rodríguez Rodríguez, Ignacio Morillas Rosell, Marcos Fernández Aranda y Omar Al-ghabari
