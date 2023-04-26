@@ -16,7 +16,7 @@ let diccionario = {
 
 const tutosC = 13;
 let visitedCPages = [];
-let enlaces = [];
+let enlacesC = [];
 
 //Al cargar la pagina, si estamos en Cuenta, recoge el componente perfil y lo actualiza si es necesario
 document.addEventListener("DOMContentLoaded", function() {
@@ -88,7 +88,7 @@ function showPercentage(){
 
 function addPage(val){
 	visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
-	enlaces = JSON.parse(sessionStorage.getItem('enlaces'));
+	enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
 	//console.log("Numero elementos en array: " + visitedCPages.length);
 	if(visitedCPages === null)
 	{
@@ -97,25 +97,25 @@ function addPage(val){
 		visitedCPages.push(val);
 		sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
 
-		enlaces = [];
-		enlaces.push("/Tutoriales/C/" + diccionario[val] + ".html");
-		sessionStorage.setItem('enlaces', JSON.stringify(enlaces));
+		enlacesC = [];
+		enlacesC.push("/Tutoriales/C/" + diccionario[val] + ".html");
+		sessionStorage.setItem('enlacesC', JSON.stringify(enlacesC));
 
 		console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
 	}
 	else
 	{
 		visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
-		enlaces = JSON.parse(sessionStorage.getItem('enlaces'));
+		enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
 		console.log("visitedCPages es " + visitedCPages);
-		console.log("enlaces es " + enlaces);
+		console.log("enlacesC es " + enlacesC);
 		if(!visitedCPages.includes(val))
 		{
 			visitedCPages.push(val);
 			sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
 
-			enlaces.push("/Tutoriales/C/" + diccionario[val] + ".html");
-			sessionStorage.setItem('enlaces', JSON.stringify(enlaces));
+			enlacesC.push("/Tutoriales/C/" + diccionario[val] + ".html");
+			sessionStorage.setItem('enlacesC', JSON.stringify(enlacesC));
 
 			console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
 		}
@@ -124,11 +124,11 @@ function addPage(val){
 
 function addCheck(){
 	const lista = document.querySelectorAll('a');
-	enlaces = JSON.parse(sessionStorage.getItem('enlaces'));
+	enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
 
 	for(let i = 0; i < lista.length; i++){
 		read = lista[i].getAttribute('id');
-		if ((!read && read != 'read') && enlaces.includes(lista[i].getAttribute('href')))
+		if ((!read && read != 'read') && enlacesC.includes(lista[i].getAttribute('href')))
 		{
 			let check = document.createElement("img");
 			check.setAttribute('src', '/Recursos/Green-Tick-Vector.png');
