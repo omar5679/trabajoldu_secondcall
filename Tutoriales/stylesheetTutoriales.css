@@ -5,3 +5,8 @@
 #rightButton{
 	float: right;
 }
+
+#checkMark{
+	max-width: 25px;
+	float: right;
+}
