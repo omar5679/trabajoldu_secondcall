@@ -11,7 +11,7 @@ let diccionario = {
 	'Ficheros' : "ficheros",
 	'Estructuras' : "estructuras",
 	'Enumerados' : "enumerados",
-	'Autoevaluación en C' : "EjemploAutoevaluacion"
+	'Autoevaluación de C' : "EjemploAutoevaluacion"
   };
 
 const tutosC = 13;
