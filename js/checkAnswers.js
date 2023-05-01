@@ -1,28 +1,32 @@
 function checkAnswers() {
-  console.log('checkAnswers function was triggered');
-  const correctAnswers = ['15'];
-  const userAnswers = [
-    document.querySelector('input[name="q1a1"]:checked').value,
-    document.querySelector('input[name="q1a2"]:checked').value,
-    document.querySelector('input[name="q1a3"]:checked').value,
-    document.querySelector('input[name="q1a4"]:checked').value,
-    document.querySelector('input[name="q1a5"]:checked').value,
-  ];
-  for (let i = 0; i < userAnswers.length; i++) {
-    const answer = userAnswers[i];
-    const questionEl = document.getElementById(`question${i+1}`);
-    if (answer === correctAnswers[i]) {
-      questionEl.classList.add('correct');
-    } else {
-      questionEl.classList.add('incorrect');
-      const incorrectInput = questionEl.querySelector(`input[value="${answer}"]`);
-      if (incorrectInput) {
-        incorrectInput.parentNode.style.backgroundColor = 'red';
+  // Remove the text-success and text-danger classes from all labels
+  const labels = document.getElementsByTagName('label');
+  for (let i = 0; i < labels.length; i++) {
+    labels[i].classList.remove('text-success', 'text-danger');
+  }
+
+  // Get all the radio buttons by name
+  const radios = document.getElementsByName('exampleForm');
+
+  // Loop through all the radio buttons
+  for (let i = 0; i < radios.length; i++) {
+    const radio = radios[i];
+
+    // Check if the radio button is checked
+    if (radio.checked) {
+      // Check if the ID of the selected radio button is equal to the correct answer
+      if (radio.id === 'q1a3') {
+        // If it's correct, highlight the label green and display a message
+        radio.parentElement.querySelector('label').classList.add('text-success');
+        document.getElementById('result').innerHTML = "¡Correcto!";
+      } else {
+        // If it's incorrect, highlight the label red and display a message
+        radio.parentElement.querySelector('label').classList.add('text-danger');
+        document.getElementById('result').innerHTML = "Incorrecto. La respuesta correcta es 15.";
       }
-      const correctInput = questionEl.querySelector(`input[value="${correctAnswers[i]}"]`);
-      if (correctInput) {
-        correctInput.parentNode.style.backgroundColor = 'green';
-      }
+
+      // Exit the loop since we have found the selected radio button
+      break;
     }
   }
 }
