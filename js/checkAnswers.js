@@ -18,11 +18,15 @@ function checkAnswers() {
       if (radio.id === 'q1a3') {
         // If it's correct, highlight the label green and display a message
         radio.parentElement.querySelector('label').classList.add('text-success');
+        
         document.getElementById('result').innerHTML = "¡Correcto!";
+        document.getElementById('result').classList.add("bg-success");
       } else {
         // If it's incorrect, highlight the label red and display a message
         radio.parentElement.querySelector('label').classList.add('text-danger');
         document.getElementById('result').innerHTML = "Incorrecto. La respuesta correcta es 15.";
+        
+        document.getElementById('result').classList.add("bg-danger");
       }
 
       // Exit the loop since we have found the selected radio button
