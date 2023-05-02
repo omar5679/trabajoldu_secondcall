@@ -20,13 +20,13 @@ let enlacesC = [];
 
 //Al cargar la pagina, si estamos en Cuenta, recoge el componente perfil y lo actualiza si es necesario
 document.addEventListener("DOMContentLoaded", function() {
-	if (window.location.pathname == '/TrabajoIdU/Cuenta/Cuenta.html')
+	if (window.location.pathname == '../Cuenta/Cuenta.html')
 	{
 		const profile = document.getElementById("profile");
 
 		showLast();
 		showPercentage();
-	} else if (window.location.pathname == '/TrabajoIdU/Tutoriales/ProgramacionImperativa.html')
+	} else if (window.location.pathname == '../Tutoriales/ProgramacionImperativa.html')
 	{
 		addCheck();
 	} else
@@ -40,7 +40,7 @@ function showLast() {
   if (lastPage != null) {
 	const newItem = document.createElement('h1');
 	const linktext = document.createElement('a');
-	linktext.setAttribute('href', '/TrabajoIdU/Tutoriales/C/' + diccionario[lastPage] + ".html");
+	linktext.setAttribute('href', '../Tutoriales/C/' + diccionario[lastPage] + ".html");
 	console.log("El valor de " + lastPage + " en diccionario es " + diccionario[lastPage]);
 	linktext.appendChild(document.createTextNode(lastPage));
 	newItem.appendChild(document.createTextNode("Vuelve a: "));

@@ -3,7 +3,7 @@ function cambioCabeceraSesion() {
     const elemento = document.getElementById("sesionCuenta");
     if (cuenta && cuenta.sesionActiva) {
         elemento.children[0].innerText = "¡Bienvenido!";
-        elemento.href = "/TrabajoIdU/Cuenta/Cuenta.html"
+        elemento.href = "../Cuenta/Cuenta.html"
         const icono = document.createElement("svg");
         icono.setAttribute("xmlns", "http://www.w3.org/2000/svg");
         icono.setAttribute("width", "16");
