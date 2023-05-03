@@ -139,7 +139,7 @@ function addCheck(){
 			{
 				let check = document.createElement("img");
 				check.setAttribute('src', '/Recursos/Green-Tick-Vector.png');
-				check.setAttribute('alt', 'Marca leido');
+				check.setAttribute('alt', 'Tutorial leido');
 				check.setAttribute('id', 'checkMark');
 
 				lista[i].appendChild(check);
