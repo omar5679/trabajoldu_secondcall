@@ -16,17 +16,17 @@ let diccionario = {
 
 const tutosC = 13;
 let visitedCPages = [];
-let enlaces = [];
+let enlacesC = [];
 
 //Al cargar la pagina, si estamos en Cuenta, recoge el componente perfil y lo actualiza si es necesario
 document.addEventListener("DOMContentLoaded", function() {
-	if (window.location.pathname == '/Cuenta/Cuenta.html')
+	if (window.location.pathname == '../Cuenta/Cuenta.html')
 	{
 		const profile = document.getElementById("profile");
 
 		showLast();
 		showPercentage();
-	} else if (window.location.pathname == '/Tutoriales/ProgramacionImperativa.html')
+	} else if (window.location.pathname == '../Tutoriales/ProgramacionImperativa.html')
 	{
 		addCheck();
 	} else
@@ -40,7 +40,7 @@ function showLast() {
   if (lastPage != null) {
 	const newItem = document.createElement('h1');
 	const linktext = document.createElement('a');
-	linktext.setAttribute('href', '/Tutoriales/C/' + diccionario[lastPage] + ".html");
+	linktext.setAttribute('href', '../Tutoriales/C/' + diccionario[lastPage] + ".html");
 	console.log("El valor de " + lastPage + " en diccionario es " + diccionario[lastPage]);
 	linktext.appendChild(document.createTextNode(lastPage));
 	newItem.appendChild(document.createTextNode("Vuelve a: "));
@@ -87,57 +87,65 @@ function showPercentage(){
 }
 
 function addPage(val){
-	visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
-	enlaces = JSON.parse(sessionStorage.getItem('enlaces'));
-	//console.log("Numero elementos en array: " + visitedCPages.length);
-	if(visitedCPages === null)
-	{
-		console.log("ENTRO EN NULL");
-		visitedCPages = [];
-		visitedCPages.push(val);
-		sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
-
-		enlaces = [];
-		enlaces.push("/Tutoriales/C/" + diccionario[val] + ".html");
-		sessionStorage.setItem('enlaces', JSON.stringify(enlaces));
-
-		console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
-	}
-	else
+	const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));
+	if (cuenta && cuenta.sesionActiva)
 	{
 		visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
-		enlaces = JSON.parse(sessionStorage.getItem('enlaces'));
-		console.log("visitedCPages es " + visitedCPages);
-		console.log("enlaces es " + enlaces);
-		if(!visitedCPages.includes(val))
+		enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
+		//console.log("Numero elementos en array: " + visitedCPages.length);
+		if(visitedCPages === null)
 		{
+			console.log("ENTRO EN NULL");
+			visitedCPages = [];
 			visitedCPages.push(val);
 			sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
 
-			enlaces.push("/Tutoriales/C/" + diccionario[val] + ".html");
-			sessionStorage.setItem('enlaces', JSON.stringify(enlaces));
+			enlacesC = [];
+			enlacesC.push("/Tutoriales/C/" + diccionario[val] + ".html");
+			sessionStorage.setItem('enlacesC', JSON.stringify(enlacesC));
 
 			console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
+		}
+		else
+		{
+			visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
+			enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
+			console.log("visitedCPages es " + visitedCPages);
+			console.log("enlacesC es " + enlacesC);
+			if(!visitedCPages.includes(val))
+			{
+				visitedCPages.push(val);
+				sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
+
+				enlacesC.push("/Tutoriales/C/" + diccionario[val] + ".html");
+				sessionStorage.setItem('enlacesC', JSON.stringify(enlacesC));
+
+				console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
+			}
 		}
 	}
 }
 
 function addCheck(){
-	const lista = document.querySelectorAll('a');
-	enlaces = JSON.parse(sessionStorage.getItem('enlaces'));
+	const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));
+	if (cuenta && cuenta.sesionActiva)
+	{
+		const lista = document.querySelectorAll('a');
+		enlacesC = JSON.parse(sessionStorage.getItem('enlacesC'));
 
-	for(let i = 0; i < lista.length; i++){
-		read = lista[i].getAttribute('id');
-		if ((!read && read != 'read') && enlaces.includes(lista[i].getAttribute('href')))
-		{
-			let check = document.createElement("img");
-			check.setAttribute('src', '/Recursos/Green-Tick-Vector.png');
-			check.setAttribute('alt', 'Marca leido');
-			check.setAttribute('id', 'checkMark');
+		for(let i = 0; i < lista.length; i++){
+			read = lista[i].getAttribute('id');
+			if ((!read && read != 'read') && enlacesC.includes(lista[i].getAttribute('href')))
+			{
+				let check = document.createElement("img");
+				check.setAttribute('src', '/Recursos/Green-Tick-Vector.png');
+				check.setAttribute('alt', 'Tutorial leido');
+				check.setAttribute('id', 'checkMark');
 
-			lista[i].appendChild(check);
-			lista[i].setAttribute('id', 'read');
-			console.log("Añadido check a: " + lista[i].getAttribute('href'));
+				lista[i].appendChild(check);
+				lista[i].setAttribute('id', 'read');
+				console.log("Añadido check a: " + lista[i].getAttribute('href'));
+			}
 		}
 	}
 }
