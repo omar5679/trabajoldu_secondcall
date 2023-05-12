@@ -5,15 +5,16 @@ To use it for other answers, send an argument of the id of the correct answer th
 function checkAnswers() {
   // Remove the text-success and text-danger classes from all labels
   const labels = document.getElementsByTagName('label');
-  const labelsq2 = document.getElementsByTagName
+  
+  
   for (let i = 0; i < labels.length; i++) {
     labels[i].classList.remove('text-success', 'text-danger');
   }
 
   // Get all the radio buttons by name
   const radios = document.getElementsByName('exampleForm');
-  const checklists = document.getElementsByName('exampleForm');
-
+  const checklists = document.getElementsByName('exampleForm2');
+  const checklist = checklists[0];
   // Loop through all the radio buttons
   for (let i = 0; i < radios.length; i++) {
     const radio = radios[i];
@@ -34,7 +35,7 @@ function checkAnswers() {
       } else {
         // If it's incorrect, highlight the label red and display a message
         radio.parentElement.querySelector('label').classList.add('text-danger');
-        document.getElementById('result').innerHTML = "Incorrecto. La respuesta correcta es 15.";
+        document.getElementById('result').innerHTML = "Incorrecto.";
         
         document.getElementById('result').classList.add("bg-danger");
       }
@@ -44,11 +45,35 @@ function checkAnswers() {
     }
   }
 //Loop through all checklist buttons
-  for (let i = 0; i < checklists.length; i++) {
-  const checklist = checklists[i];
-  if (checklist.checked){
-    
+  var correctAnswers = ["radio2Example1", "radio2Example2", "radio2Example5"];
+  var selectedAnswers = [];
+
+  // Traverse through the checkboxes and get the selected answers
+  var checkboxes = document.getElementsByName("exampleForm2");
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      selectedAnswers.push(checkboxes[i].id);
+    }
   }
 
-  }
+  // Check if correct answers and selected answers are equal
+  var isCorrect = selectedAnswers.length === correctAnswers.length && selectedAnswers.every((value, index) => value === correctAnswers[index]);
+
+  // Display a message to the user based on the result
+  if (isCorrect) {
+        // If it's correct, highlight the label green and display a message
+        // If it was prev incorrect, then we remove the text danger label and background
+        checklist.parentElement.querySelector('label').classList.remove('text-danger'); 
+        document.getElementById('result2').classList.remove("bg-danger");
+        document.getElementById('result2').innerHTML = "¡Correcto!";
+        document.getElementById('result2').classList.add("bg-success");
+
+      } 
+      else {
+        // If it's incorrect, highlight the label red and display a message
+        
+        document.getElementById('result2').innerHTML = "Incorrecto.";
+        document.getElementById('result2').classList.add("bg-danger");
+      }
+
 }
