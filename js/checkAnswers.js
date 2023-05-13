@@ -45,19 +45,19 @@ function checkAnswers() {
     }
   }
 //Loop through all checklist buttons
-  var correctAnswers = ["radio2Example1", "radio2Example2", "radio2Example5"];
-  var selectedAnswers = [];
+  let correctAnswers = ["radio2Example1", "radio2Example2", "radio2Example5"];
+  let selectedAnswers = [];
 
   // Traverse through the checkboxes and get the selected answers
-  var checkboxes = document.getElementsByName("exampleForm2");
-  for (var i = 0; i < checkboxes.length; i++) {
+  let checkboxes = document.getElementsByName("exampleForm2");
+  for (let i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
       selectedAnswers.push(checkboxes[i].id);
     }
   }
 
   // Check if correct answers and selected answers are equal
-  var isCorrect = selectedAnswers.length === correctAnswers.length && selectedAnswers.every((value, index) => value === correctAnswers[index]);
+  let isCorrect = selectedAnswers.length === correctAnswers.length && selectedAnswers.every((value, index) => value === correctAnswers[index]);
 
   // Display a message to the user based on the result
   if (isCorrect) {
@@ -75,5 +75,21 @@ function checkAnswers() {
         document.getElementById('result2').innerHTML = "Incorrecto.";
         document.getElementById('result2').classList.add("bg-danger");
       }
-
+      
+      // Check if short answer question is correct
+      const userAnswer = document.getElementById("form4Example3").value.toLowerCase();
+  
+ 
+      if (userAnswer === "fopen"||userAnswer === "fopen()") {
+        console.log("Correct answer!");
+        checklist.parentElement.querySelector('label').classList.remove('text-danger'); 
+        document.getElementById('result3').classList.remove("bg-danger");
+        document.getElementById('result3').innerHTML = "¡Correcto, muy bien!";
+        document.getElementById('result3').classList.add("bg-success");
+      }
+      else {
+        console.log("Incorrect answer!");
+        document.getElementById('result3').innerHTML = "Incorrecto.";
+        document.getElementById('result3').classList.add("bg-danger");
+      }
 }
