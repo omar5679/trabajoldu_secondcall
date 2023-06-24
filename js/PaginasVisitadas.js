@@ -101,10 +101,11 @@ function addPage(val){
 			sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
 
 			enlacesC = [];
-			enlacesC.push("/Tutoriales/C/" + diccionario[val] + ".html");
+			enlacesC.push("C/" + diccionario[val] + ".html");
 			sessionStorage.setItem('enlacesC', JSON.stringify(enlacesC));
 
 			console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
+			console.log("Añadido " + diccionario[val] + ".html a lista de enlacesC. Num elementos: " + enlacesC.length);
 		}
 		else
 		{
@@ -117,7 +118,7 @@ function addPage(val){
 				visitedCPages.push(val);
 				sessionStorage.setItem('visitedCPages', JSON.stringify(visitedCPages));
 
-				enlacesC.push("/Tutoriales/C/" + diccionario[val] + ".html");
+				enlacesC.push("C/" + diccionario[val] + ".html");
 				sessionStorage.setItem('enlacesC', JSON.stringify(enlacesC));
 
 				console.log("Añadido " + val + " a lista de C. Num elementos: " + visitedCPages.length);
@@ -146,6 +147,9 @@ function addCheck(){
 				lista[i].setAttribute('id', 'read');
 				console.log("Añadido check a: " + lista[i].getAttribute('href'));
 			}
+			else
+				console.log(lista[i].getAttribute('href') + " no visitado (!=" + enlacesC + ")");
 		}
-	}
+	} else
+		console.log("Sin sesion iniciada");
 }
