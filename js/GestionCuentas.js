@@ -18,7 +18,8 @@ function crearCuenta() {
     }
 }
 
-function iniciarSesion() {
+function iniciarSesion(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
     const email = document.getElementById("email").value;
     const password = document.getElementById("contraseña").value;
     const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));
@@ -27,9 +28,11 @@ function iniciarSesion() {
         sessionStorage.setItem("cuenta", JSON.stringify(cuenta));
         alert("¡Bienvenido de vuelta!");
     } else {
+        window.location.href = "../LogIn/LogIn.html";
         alert("Email o contraseña incorrectos. Inténtelo de nuevo.");
     }
 }
+
 
 function cerrarSesion() {
     const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));

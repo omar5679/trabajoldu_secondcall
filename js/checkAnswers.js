@@ -30,11 +30,14 @@ function checkAnswers() {
         
         radio.parentElement.querySelector('label').classList.add('text-success');
         document.getElementById('result').innerHTML = "¡Correcto!";
+        document.getElementById('result').setAttribute('tabindex', '0');
         document.getElementById('result').classList.add("bg-success");
+        
 
       } else {
         // If it's incorrect, highlight the label red and display a message
         radio.parentElement.querySelector('label').classList.add('text-danger');
+        document.getElementById('result').setAttribute('tabindex', '0');
         document.getElementById('result').innerHTML = "Incorrecto.";
         
         document.getElementById('result').classList.add("bg-danger");
@@ -66,6 +69,7 @@ function checkAnswers() {
         checklist.parentElement.querySelector('label').classList.remove('text-danger'); 
         document.getElementById('result2').classList.remove("bg-danger");
         document.getElementById('result2').innerHTML = "¡Correcto!";
+        document.getElementById('result2').setAttribute('tabindex', '0');
         document.getElementById('result2').classList.add("bg-success");
 
       } 
@@ -73,6 +77,7 @@ function checkAnswers() {
         // If it's incorrect, highlight the label red and display a message
         
         document.getElementById('result2').innerHTML = "Incorrecto.";
+        document.getElementById('result2').setAttribute('tabindex', '0');
         document.getElementById('result2').classList.add("bg-danger");
       }
       
@@ -86,10 +91,13 @@ function checkAnswers() {
         document.getElementById('result3').classList.remove("bg-danger");
         document.getElementById('result3').innerHTML = "¡Correcto, muy bien!";
         document.getElementById('result3').classList.add("bg-success");
+        document.getElementById('result3').setAttribute('tabindex', '0');
       }
       else {
         console.log("Incorrect answer!");
         document.getElementById('result3').innerHTML = "Incorrecto.";
         document.getElementById('result3').classList.add("bg-danger");
+        document.getElementById('result3').setAttribute('tabindex', '0');
+
       }
 }

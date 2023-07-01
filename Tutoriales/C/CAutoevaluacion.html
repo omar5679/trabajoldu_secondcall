@@ -92,20 +92,21 @@
 
     <section class="p container">
       <div class="row py-lg-5">
-        <h1 class="h3 m-3">1ª Pregunta</h1>
+        <h1 class="h3 m-3"  tabindex="0">1ª Pregunta</h1>
         <div class="mx-0 mx-sm-auto">
           <div class="card">
             <div class="card-body pb-0">
               <div class="left">
                 <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
                 <p>
-                  <strong>Examina el siguiente código y selecciona la opción que corresponde a la salida por consola.
+                  <strong id="question1-text" tabindex="0">
+                    Examina el siguiente código y selecciona la opción que corresponde a la salida por consola.
                   </strong>
                 <div class="cajaTutorial container mb-3">
                   <div class="codigo">
                     <pre>
-                          <code data-language="html">
-int s =0;
+                          <code id="codeblock1" data-language="html" tabindex="0">
+int s = 0;
 for (int i = 0; i<5){
     s+=3;
     s%2+5;
@@ -122,13 +123,13 @@ printf("%d",s);
 
                 <form class="px-1">
                   <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="exampleForm" id="q1a1">
+                    <input class="form-check-input" type="radio" name="exampleForm" id="q1a1" >
                     <label class="form-check-label" for="q1a1">
                       13
                     </label>
                   </div>
                   <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="exampleForm" id="q1a2">
+                    <input class="form-check-input" type="radio" name="exampleForm" id="q1a2" >
                     <label class="form-check-label" for="q1a2">
                       18
                     </label>
@@ -161,14 +162,14 @@ printf("%d",s);
           </div>
           </div>
           
-        <h1 class="h3 m-3">2ª Pregunta</h1>
+        <h1 class="h3 m-3" tabindex="0">2ª Pregunta</h1>
         <div class="mx-0 mx-sm-auto">
           <div class="card">
             <div class="card-body">
               <div class="left">
                 <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
                 <p>
-                  <strong>¿Cuáles de las siguientes afirmaciones son verdaderas acerca de las estructuras en C?
+                  <strong tabindex="0"> ¿Cuáles de las siguientes afirmaciones son verdaderas acerca de las estructuras en C?
                     Selecciona todas las opciones que apliquen.</strong>
                 </p>
               </div>
@@ -215,14 +216,14 @@ printf("%d",s);
         </div>
 
 
-        <h1 class="h3 m-3">3ª Pregunta</h1>
+        <h1 class="h3 m-3" tabindex="0">3ª Pregunta</h1>
         <div class="mx-0 mx-sm-auto">
           <div class="card">
             <div class="card-body">
               <div class="left">
                 <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
                 <p>
-                  <strong>¿Cuál es el nombre de la función C que se utiliza para realizar operaciones con archivos?</strong>
+                  <strong tabindex="0">¿Cuál es el nombre de la función C que se utiliza para realizar operaciones con archivos?</strong>
                 </p>
               </div>
               <hr />
