@@ -1,12 +1,25 @@
-#leftButton{
+#leftButton {
 	float: left;
 }
 
-#rightButton{
+#rightButton {
 	float: right;
 }
 
-#checkMark{
+#checkMark {
 	max-width: 25px;
 	float: right;
 }
+
+ul {
+	margin-left: 40px;
+	
+}
+
+h3 {
+	padding-top: 10px;
+  }
+
+h2 {
+	padding-top: 10px;
+  }

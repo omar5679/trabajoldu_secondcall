@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../stylesheetTutoriales.css">
+    <link rel="stylesheet" type="text/css" href="../../Tutoriales.css" />
     <script src="../../js/SesionCuenta.js"></script>
     <script src="../../js/PaginasVisitadas.js"></script>
 </head>
@@ -78,17 +79,141 @@
 
     <section class="py-5 container">
       <div class="row py-lg-5">
-        <h1 class="h3">Operadores y booleanos</h1>
-        <p>
-            (En estas secciones se explica la teoría del tutorial con texto, fotos y videos)
-        </p>
-        <a href = "../Java/Introduccion.html">
-          ¡Visita un tutorial implementado haciendo click aqui!
-        </a>
-        <!--a href="../EjemploAutoevaluacion.html"  class="text-decoration-none text-white  btn btn-lg btn-dark" role = "button">
-          Auto-Evaluación
-        </a-->
+        <h1>Operators and Booleans in C</h1>
+  <p>Operators are symbols that perform operations on operands. C provides various operators to perform arithmetic, assignment, comparison, logical, and other operations. Booleans represent truth values (either true or false) and are used in decision-making and conditional statements.</p>
 
+  <h2>Arithmetic Operators</h2>
+  <p>Arithmetic operators perform basic arithmetic operations on numerical operands. Here are some examples:</p>
+  <div class="left-justified">
+    <div class="cajaTutorial container mb-3">
+      <div class="codigo">
+        <pre>
+          <code data-language="C">
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 5;
+
+    int sum = a + b;
+    int difference = a - b;
+    int product = a * b;
+    int quotient = a / b;
+    int remainder = a % b;
+
+    printf("Sum: %d\n", sum);
+    printf("Difference: %d\n", difference);
+    printf("Product: %d\n", product);
+    printf("Quotient: %d\n", quotient);
+    printf("Remainder: %d\n", remainder);
+
+    return 0;
+}
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+  <p>The above code demonstrates the usage of arithmetic operators such as addition (`+`), subtraction (`-`), multiplication (`*`), division (`/`), and modulus (`%`). The output displays the results of these operations.</p>
+
+  <h2>Comparison Operators</h2>
+  <p>Comparison operators are used to compare values and return a boolean result (either true or false). Here's an example:</p>
+  <div class="left-justified">
+    <div class="cajaTutorial container mb-3">
+      <div class="codigo">
+        <pre>
+          <code data-language="C">
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 5;
+
+    int result1 = a > b;
+    int result2 = a == b;
+    int result3 = a != b;
+
+    printf("Result 1: %d\n", result1);
+    printf("Result 2: %d\n", result2);
+    printf("Result 3: %d\n", result3);
+
+    return 0;
+}
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+  <p>In the above code, we use comparison operators such as greater than (`>`), equal to (`==`), and not equal to (`!=`). The output displays the boolean results of these comparisons.</p>
+
+  <h2>Logical Operators</h2>
+  <p>Logical operators are used to combine boolean expressions and produce boolean results. Here's an example:</p>
+  <div class="left-justified">
+    <div class="cajaTutorial container mb-3">
+      <div class="codigo">
+        <pre>
+          <code data-language="C">
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 5;
+
+    int result1 = (a > b) && (a != b);
+    int result2 = (a > b) || (a == b);
+    int result3 = !result1;
+
+    printf("Result 1: %d\n", result1);
+    printf("Result 2: %d\n", result2);
+    printf("Result 3: %d\n", result3);
+
+    return 0;
+}
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+  <p>The above code demonstrates the usage of logical operators such as logical AND (`&&`), logical OR (`||`), and logical NOT (`!`). The output displays the boolean results of these logical operations.</p>
+
+  <h2>Assignment Operators</h2>
+  <p>Assignment operators are used to assign values to variables. Here's an example:</p>
+  <div class="left-justified">
+    <div class="cajaTutorial container mb-3">
+      <div class="codigo">
+        <pre>
+          <code data-language="C">
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 5;
+
+    a += b;
+    printf("Updated a: %d\n", a);
+
+    b *= 2;
+    printf("Updated b: %d\n", b);
+
+    return 0;
+}
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+  <p>In the above code, we use assignment operators such as addition assignment (`+=`) and multiplication assignment (`*=`) to update the values of variables. The output displays the updated values of `a` and `b`.</p>
+
+  <h2>Conclusion</h2>
+  <p>C provides a wide range of operators for performing arithmetic, comparison, logical, and assignment operations. Understanding these operators is essential for writing effective and expressive C programs. This tutorial covered the basics of operators and booleans in C, including code snippets to illustrate their usage.</p>
+
+  <div class ="text-center">
+    <strong>Your progress on the C tutorials:</strong>
+  </div>
+    <div class="progressBar">
+      <progress class="progress-bar" value="0" max="100"></progress>
+      <span class="percentage-number">0%</span>
+  </div>
 		<!-- Botones de navegacion -->
         <div class="mt-4">
           <a id="leftButton" class="text-decoration-none text-white  btn btn-lg btn-dark" href="variables.html">❮ Variables, tipos de datos y conversión</a>

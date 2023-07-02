@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		addCheck();
 	} else
 		console.log("Estoy en ubicacion: " + window.location.pathname);
+		showPercentage();
 });
 
 function showLast() {
@@ -51,40 +52,30 @@ function showLast() {
   }
 }
 
-function showPercentage(){
-	//if(!visitedCPages)
-	//	sessionStorage.setItem('visitedCPages', JSON.stringify([]));
-	visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
-	let barraProgreso = document.getElementById('progressBar');
-	let percentageNumber = document.createElement('span');
-	if(!barraProgreso && visitedCPages && visitedCPages.length > 0)
-	{
-		const newItem = document.createElement('a');
-		newItem.innerText = "Progreso actual en C";
+function showPercentage() {
+  if (!visitedCPages) {
+    sessionStorage.setItem('visitedCPages', JSON.stringify([]));
+  }
 
-		barraProgreso = document.createElement('progress');
-		barraProgreso.setAttribute('id', 'progressBar');
-		barraProgreso.setAttribute('value', '0');
-		barraProgreso.setAttribute('max', '100');
-		barraProgreso.style.marginLeft = "20px";
+  visitedCPages = JSON.parse(sessionStorage.getItem('visitedCPages'));
+  const progressBars = document.querySelectorAll('.progress-bar');
+  const percentageNumbers = document.querySelectorAll('.percentage-number');
 
-		percentageNumber.innerText = "0%";
-		percentageNumber.style.marginLeft = "20px";
+  if (progressBars && visitedCPages && visitedCPages.length > 0) {
+    progressBars.forEach((progressBar, index) => {
+      const percentageNumber = percentageNumbers[index];
+      const completionRate = Math.floor((visitedCPages.length / tutosC) * 100);
 
-		newItem.appendChild(barraProgreso);
-		newItem.appendChild(percentageNumber);
+      if (progressBar && percentageNumber) {
+        progressBar.value = completionRate;
+        percentageNumber.textContent = completionRate.toFixed(0) + "%";
 
-		console.log("Numero hijos de profile: " + profile.children.length);
-		profile.insertBefore(newItem, profile.children[profile.children.length - 3]); //parece que el boton es el antepenultimo o algo
-		profile.insertBefore(document.createElement('br'), profile.children[profile.children.length - 3]);
-	}
-	if(barraProgreso)
-	{
-		barraProgreso.setAttribute('value', visitedCPages.length / tutosC * 100);
-		percentageNumber.innerText = (visitedCPages.length / tutosC * 100).toFixed(1) + "%";
-		console.log("Llevas un " + visitedCPages.length / tutosC * 100 + "% completo de la lección de C. Lecciones: " + visitedCPages.length);
-	}
+        console.log(`Completion rate for progress bar ${index + 1}: ${completionRate}%. Visited pages: ${visitedCPages.length}`);
+      }
+    });
+  }
 }
+
 
 function addPage(val){
 	const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));

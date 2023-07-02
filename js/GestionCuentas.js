@@ -38,6 +38,6 @@ function cerrarSesion() {
     const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));
     cuenta.sesionActiva = false;
     sessionStorage.setItem("cuenta", JSON.stringify(cuenta));
-    window.location.href="../index.html";
+    window.location.href = "../index.html";
     alert("Sesión cerrada.");
 }

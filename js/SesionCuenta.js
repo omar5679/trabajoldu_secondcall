@@ -2,7 +2,7 @@ function cambioCabeceraSesion() {
     const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));
     const elemento = document.getElementById("sesionCuenta");
     if (cuenta && cuenta.sesionActiva) {
-        elemento.children[0].innerText = "¡Bienvenido!";
+        elemento.children[0].innerText = "Su perfil";
         elemento.href = "/Cuenta/Cuenta.html"                           //revisar si funciona con github pages
         const icono = document.createElement("svg");
         icono.setAttribute("xmlns", "http://www.w3.org/2000/svg");
