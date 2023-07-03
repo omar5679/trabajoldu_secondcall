@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../stylesheetTutoriales.css">
   <link rel="stylesheet" type="text/css" href="../../Tutoriales.css" />
-  <link rel="stylesheet" type="text/css" href="../../Tutoriales.css" />
   <script src="../../js/SesionCuenta.js"></script>
   <script src="../../js/PaginasVisitadas.js"></script>
 </head>
@@ -20,7 +19,9 @@
 
   <script>
     addPage('Fundamentos básicos');
-    sessionStorage.setItem('lastPage', 'Fundamentos básicos')</script>
+    sessionStorage.setItem('lastPage', 'Fundamentos básicos')
+    
+    </script>
   <header>
     <div class="collapse bg-dark" id="navbarHeader">
       <div class="container">
@@ -217,12 +218,15 @@ int main() {
         <!--a href="../EjemploAutoevaluacion.html"  class="text-decoration-none text-white  btn btn-lg btn-dark" role = "button">
           Auto-Evaluación
         </a-->
-        <div class ="text-center">
+        <div class="text-center progressBarContainer">
           <strong>Your progress on the C tutorials:</strong>
         </div>
+        
+        <div class="progressBarContainer">
           <div class="progressBar">
             <progress class="progress-bar" value="0" max="100"></progress>
             <span class="percentage-number">0%</span>
+          </div>
         </div>
         <div class="mt-4">
           <a id="rightButton" class="text-decoration-none text-white  btn btn-lg btn-dark"

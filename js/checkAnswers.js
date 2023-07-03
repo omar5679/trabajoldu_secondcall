@@ -11,6 +11,7 @@ function checkAnswers() {
     labels[i].classList.remove('text-success', 'text-danger');
   }
 
+  let score = 0; // Initialize the score
   // Get all the radio buttons by name
   const radios = document.getElementsByName('exampleForm');
   const checklists = document.getElementsByName('exampleForm2');
@@ -25,6 +26,7 @@ function checkAnswers() {
       if (radio.id === 'q1a3') {
         // If it's correct, highlight the label green and display a message
         // If it was prev incorrect, then we remove the text danger label and background
+        score++;
         radio.parentElement.querySelector('label').classList.remove('text-danger'); 
         document.getElementById('result').classList.remove("bg-danger");
         
@@ -66,6 +68,7 @@ function checkAnswers() {
   if (isCorrect) {
         // If it's correct, highlight the label green and display a message
         // If it was prev incorrect, then we remove the text danger label and background
+        score++;
         checklist.parentElement.querySelector('label').classList.remove('text-danger'); 
         document.getElementById('result2').classList.remove("bg-danger");
         document.getElementById('result2').innerHTML = "¡Correcto!";
@@ -86,6 +89,7 @@ function checkAnswers() {
   
  
       if (userAnswer === "fopen"||userAnswer === "fopen()") {
+        score++;
         console.log("Correct answer!");
         checklist.parentElement.querySelector('label').classList.remove('text-danger'); 
         document.getElementById('result3').classList.remove("bg-danger");
@@ -99,5 +103,13 @@ function checkAnswers() {
         document.getElementById('result3').classList.add("bg-danger");
         document.getElementById('result3').setAttribute('tabindex', '0');
 
+      }
+      const reviewSession = document.getElementById('reviewSession');
+      reviewSession.innerHTML = `<strong>Nota: ${score}/3</strong>`;
+    
+      if (score === 3) {
+        reviewSession.innerHTML += "<br>¡Felicidades! Respondiste todas las preguntas correctamente.";
+      } else {
+        reviewSession.innerHTML += "<br>Revise sus preguntas y vuelva a intentarlo.";
       }
 }

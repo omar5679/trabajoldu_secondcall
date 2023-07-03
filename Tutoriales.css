@@ -6,7 +6,7 @@
     overflow: auto;
     padding: 0px 10px;
     margin: auto;
-    width: 100%;
+    width: 80%;
     float: left;
 }
 
@@ -17,6 +17,22 @@
     color: #fff;
 }
 
+.score {
+  color: black;
+}
+
+.success-text {
+  color: green;
+}
+
+.error-text {
+  color: red;
+}
+
+.review-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 
 .progressBar {

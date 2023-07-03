@@ -1,5 +1,16 @@
 function cambioCabeceraSesion() {
+    
+    
     const cuenta = JSON.parse(sessionStorage.getItem("cuenta"));
+    const progressBarContainers = document.querySelectorAll(".progressBarContainer");
+  
+    for (const container of progressBarContainers) {
+      if (cuenta && cuenta.sesionActiva) {
+        container.style.display = "block";
+      } else {
+        container.style.display = "none";
+      }
+    }
     const elemento = document.getElementById("sesionCuenta");
     if (cuenta && cuenta.sesionActiva) {
         elemento.children[0].innerText = "Su perfil";

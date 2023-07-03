@@ -144,3 +144,6 @@ function addCheck(){
 	} else
 		console.log("Sin sesion iniciada");
 }
+
+  
+  
