@@ -1,16 +1,14 @@
-Trabajo para la asignatura de Interfaces de Usuario en la Universidad de Málaga, grado de Ingeniería de Software, curso 2022-2023
+Trabajo para la segunda convocatoria de la asignatura Interfaces de Usuario de la Universidad de Málaga, Grado en Ingeniería del Software, curso académico 2022-2023
 
-Consiste en una web donde se podrán realizar tutoriales de distintos lenguajes de programación
+Consiste en un sitio web donde puedes hacer tutoriales sobre diferentes lenguajes de programación.
 
-Realizado por Ángel Joaquín Rodríguez Rodríguez, Ignacio Morillas Rosell, Marcos Fernández Aranda y Omar Al-ghabari
+Para implementar la aplicación:
 
-Para desplegar la aplicación:
-
-Utilizando Live Server
+Usando Live Server (mejor experiencia)
 
 - Tener la extensión Live Server de Visual Studio Code.
-- Hacer click derecho al archivo index.html de la página principal y seleccionar Open with Live Server.
+- Haga clic derecho en el archivo index.html en la página principal y seleccione Abrir con Live Server.
 
-Utilizando Github Pages
+Uso de páginas de Github
 
-- Visitar https://ignaciomr2000.github.io/TrabajoIdU/
+- https://omar5679.github.io/trabajoldu_secondcall/
